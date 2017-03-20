@@ -1,0 +1,424 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+body{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+/*添加字体样式*/
+@font-face {
+    font-family: "iconfont";
+    src: url('../font/iconfont.eot?t=1489996925035'); /* IE9*/
+    src: url('../font/iconfont.eot?t=1489996925035#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff?t=1489996925035') format('woff'), /* chrome, firefox */
+    url('../font/iconfont.ttf?t=1489996925035') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg?t=1489996925035#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-pingguo:before { content: "\e65a";
+                         font-size: 22px;
+}
+.icon-s:before { content: "\e64b"; }
+.icon-sousuo:before { content: "\e67a"; }
+/*头部开始*/
+    /*小屏优先*/
+    .large{
+        display: none;
+    }
+    /*小屏以756px为界限*/
+    .small{
+        max-width: 765px;
+        height: 44px;
+        background: rgba(0,0,0,.8);
+        color:#fff;
+        position: relative;
+    }
+    .small .middle{
+        max-width:765px ;
+        height:44px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    .small .middle li{
+        width: 33.33333%;
+        height: 44px;
+        float: left;
+        line-height: 44px;
+        text-align: center;
+    }
+    .small .middle li:nth-child(1){
+        text-align: left;
+    }
+    .small .middle li:nth-child(3){
+        text-align: right;
+    }
+    .small .middle li .line{
+        width: 20px;
+        height:20px;
+        /*background: #fff;*/
+        float: left;
+        margin: 14px;
+        cursor: pointer;
+    }
+    .small .middle li .line .line1{
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        float: left;
+        margin-top: 5px;
+        transition: transform 1s ease;
+    }
+    .small .middle li .line .line2{
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        float: left;
+        margin-top: 8px;
+        transition: transform 1s ease;
+    }
+
+
+
+
+
+
+
+
+    /*弹出下拉菜单*/
+    .small .list{
+        position: absolute;
+        width:100%;
+        display: none;
+        left: 0;
+        top:44px;
+        z-index: 10;
+        background: rgba(0,0,0,.9);
+    }
+    .small .list li{
+        width: 80%;
+        height: 40px;
+        line-height: 40px;
+        margin: 0 auto;
+        border-bottom: 1px inset #ccc;
+    }
+    .small .list li a{
+        color: #fff;
+        font-size: 14px;
+    }
+    /*大屏 1024px为界限*/
+    @media screen and (min-width: 765px){
+        .small{
+            display: none;
+        }
+        .large{
+            display: block;
+        }
+        .large{
+            min-width: 765px;
+            height: 44px;
+            background: rgba(0,0,0,.8);
+            color:#fff;
+            font-size: 14px;
+        }
+        .large .middle{
+            max-width: 1024px;
+            height: 44px;
+            margin: 0 auto;
+            line-height:44px;
+            text-align: center;
+        }
+
+        .large li{
+            width:11.1111111%;
+            float:left;
+        }
+        .large li a{
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+    }
+/*头部结束*/
+/*banner开始*/
+    .wheel{
+        width: 100%;
+        height:420px;
+        background:#000;
+        position: relative;
+        overflow: hidden;
+    }
+    .wheel .box{
+        max-width:100%;
+        margin:auto;
+        height:100%;
+        position: relative;
+    }
+    .wheel .box .wheel-list{
+        position: absolute;
+        width:100%;
+        height:100%;
+        left:100%;
+        top:0;
+        overflow: hidden;
+    }
+    .wheel .box .wheel-list a{
+        position: absolute;
+        width:100%;
+        height:100%;
+        overflow: hidden;
+    }
+
+    .wheel .box .wheel-list:nth-child(1){
+        background:#0A0A0A;
+        left:0;
+    }
+
+    .wheel .box .wheel-list:nth-child(2){
+        background:#F3F3F3;
+
+    }
+
+    .wheel .box .wheel-list:nth-child(3){
+        background:#fff;
+    }
+
+    .wheel .box .wheel-list:nth-child(1) a{
+        background:url("../img/iphones.jpg") no-repeat center;
+        background-size: contain;
+
+    }
+    .wheel .box .wheel-list:nth-child(2) a{
+        background:url("../img/watchm.jpg") no-repeat center;
+        background-size: contain;
+    }
+
+    .wheel .box .wheel-list:nth-child(3) a{
+        background:url("../img/macbooks.jpg") no-repeat center;
+        background-size: contain;
+    }
+
+    .btns{
+        width:300px;height:2px;
+        position: absolute;
+        left:0;bottom:50px;
+        right:0;
+        margin:auto;z-index:999;
+    }
+    .btns .btn{
+        width:30%;height:100%;
+        margin-left:2%;float:left;
+        border:1px solid #fff;
+        border-radius: 1px;
+        position: relative;z-index:999;
+    }
+    .btns .btn .progress{
+        position: absolute;
+        width:0%;height:100%;
+        background:#666;z-index:999;
+    }
+
+    .leftBthBox{
+        width:20%;
+        height:100%;
+        position: absolute;
+        left:0;top:0;
+        z-index: 999;
+    }
+    .rightBthBox{
+        width:20%;
+        height:100%;
+        position: absolute;
+        right:0;top:0;
+        z-index: 999;
+    }
+    .leftBtn,.rightBtn{
+        width:40px;height:40px;
+        background:#ccc;
+        text-align: center;
+        line-height: 40px;
+        position: absolute;
+        left:0;top:0;right:0;bottom: 0;
+        margin:auto;
+        font-size:20px;
+        font-family: "宋体";
+        cursor: pointer;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    .leftBthBox:hover .leftBtn{
+        opacity: 1;
+    }
+
+    .rightBthBox:hover .rightBtn{
+        opacity: 1;
+    }
+
+
+
+    @media screen and (min-width: 765px){
+        .wheel{
+            height:540px;
+            overflow: hidden;
+        }
+        .wheel .box .wheel-list:nth-child(1) a{
+            background:url("../img/iphonel.jpg") no-repeat center;
+            background-size: contain;
+            overflow: hidden;
+        }
+        .wheel .box .wheel-list:nth-child(2) a{
+            background:url("../img/watchl.jpg") no-repeat center;
+            background-size: contain;
+            overflow: hidden;
+        }
+        .wheel .box .wheel-list:nth-child(3) a{
+            background:url("../img/macbookl.jpg") no-repeat center;
+            background-size: contain;
+            overflow: hidden;
+        }
+        .leftBtn,.rightBtn{
+            width:80px;height:80px;
+            background:#ccc;
+            text-align: center;
+            line-height: 80px;
+            position: absolute;
+            left:0;top:0;right:0;bottom: 0;
+            margin:auto;
+            font-size:30px;
+            font-family: "宋体";
+            cursor: pointer;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+    }
+/*banner结束*/
+/*12栅格*/
+    .item{
+        height: 200px;
+        border:1px solid #fff;
+    }
+   .ipad{
+        background: url("../img/ipad_pro_small.jpg") center;
+    }
+    .tv{
+        background: url("../img/iphone_upgrade_small.jpg") center;
+    }
+    .airpods{
+        background: url("../img/airpods_small.jpg") center;
+    }
+    .accessories{
+        background: url("../img/accessories_small.jpg") center;
+    }
+    /*足部开始*/
+
+    /*小屏*/
+    .footer .inner .top{
+        display: none;
+    }
+    .footer .inner .low{
+        max-width:980px ;
+
+    }
+    .footer .inner .low li{
+        max-width:980px ;
+        height: 40px;
+        font-size: 12px;
+        line-height: 40px;
+        border-bottom: 1px solid #999;
+        cursor: pointer;
+    }
+    .footer{
+        width: 100%;
+        background: #F2F2F2;
+        float: left;
+        height: 421px;
+    }
+    .footer .inner{
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 15px;
+        height: 350px;
+    }
+    .footer .inner .four{
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid #333;
+        font-size: 12px;
+    }
+    /*大屏*/
+    @media screen and (min-width: 980px){
+        .footer .inner .top{
+            display: block;
+        }
+        .footer .inner .low{
+            display: none;
+        }
+        .footer{
+            width: 100%;
+            background: #F2F2F2;
+            float: left;
+            height: 421px;
+        }
+        .footer .inner{
+            max-width: 980px;
+            margin: 0 auto;
+
+            height: 350px;
+        }
+        .footer .inner .four{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #333;
+            font-size: 12px;
+        }
+        .footer .inner .top{
+            padding-top: 20px;
+        }
+        .footer .inner .five{
+            color:#000;
+            float: left;
+            font-size: 12px;
+            margin-right:80px;
+        }
+        .footer .inner .five h3{
+            color:#000;
+
+
+        }
+        .footer .inner .five a{
+            color:#000;
+        }
+        .footer .inner .block{
+            margin-bottom: 10px;
+        }
+
+
+
+        .footer .inner .bot .row{
+            width: 100%;
+            height: 200px;
+            color: #000;
+            background: red;
+        }
+        .footer .inner .bot a{
+            color: #000;
+        }
+    }
